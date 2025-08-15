@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Escape Room - Марта</title>
+<style>
+  body {
+    margin: 0;
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  h1 {
+    margin-top: 20px;
+  }
+
+  .hidden-letters {
+    position: relative;
+    height: 50vh;
+  }
+
+  .letter {
+    position: absolute;
+    font-size: 3em;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .letter:hover {
+    opacity: 1;
+    color: red;
+  }
+
+  .inputs {
+    margin-top: 20px;
+  }
+
+  input {
+    padding: 10px;
+    font-size: 1.2em;
+    margin: 5px;
+    text-align: center;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+  }
+
+  #audioPlayer {
+    display: none;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+
+<h1>Введите пароль</h1>
+
+<div class="hidden-letters" id="hiddenArea">
+  <span class="letter" style="top:10%; left:20%;">М</span>
+  <span class="letter" style="top:20%; left:40%;">а</span>
+  <span class="letter" style="top:40%; left:60%;">р</span>
+  <span class="letter" style="top:60%; left:30%;">т</span>
+  <span class="letter" style="top:80%; left:50%;">а</span>
+</div>
+
+<div class="inputs">
+  <input type="text" id="pass1" placeholder="Пароль 1">
+  <input type="text" id="pass2" placeholder="Пароль 2">
+  <br>
+  <button onclick="checkPassword()">Проверить</button>
+</div>
+
+<audio id="audioPlayer" controls>
+  <source src="song.mp3" type="audio/mpeg">
+  Ваш браузер не поддерживает аудио.
+</audio>
+
+<script>
+function checkPassword() {
+  const p1 = document.getElementById("pass1").value.trim();
+  const p2 = document.getElementById("pass2").value.trim();
+  if (p1 === "Марта" && p2 === "Марта") {
+    document.getElementById("audioPlayer").style.display = "block";
+    document.getElementById("audioPlayer").play();
+  } else {
+    alert("Неверный пароль");
+  }
+}
+</script>
+
+</body>
+</html>
