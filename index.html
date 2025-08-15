@@ -71,14 +71,14 @@
 </div>
 
 <div class="inputs">
-  <input type="text" id="pass1" placeholder="Пароль 1">
-  <input type="text" id="pass2" placeholder="Пароль 2">
+  <input type="text" id="pass1" placeholder="Password 1">
+  <input type="text" id="pass2" placeholder="Password 2">
   <br>
-  <button onclick="checkPassword()">Проверить</button>
+  <button onclick="checkPassword()">Check</button>
 </div>
 
 <audio id="audioPlayer" controls>
-  <source src="song.mp3" type="audio/mpeg">
+  <source src="little-bird-2.mp3" type="audio/mpeg">
   Your browser doesnt support the audio.
 </audio>
 
@@ -90,7 +90,7 @@ function checkPassword() {
     document.getElementById("audioPlayer").style.display = "block";
     document.getElementById("audioPlayer").play();
   } else {
-    alert("Неверный пароль");
+    alert("Incorrect password");
   }
 }
 </script>
